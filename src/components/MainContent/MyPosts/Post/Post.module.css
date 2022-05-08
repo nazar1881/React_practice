@@ -1,0 +1,11 @@
+.background {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  margin-bottom: 10px;
+}
+
+.background img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}

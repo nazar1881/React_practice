@@ -1,0 +1,15 @@
+.wrapper {
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.name {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 700;
+}

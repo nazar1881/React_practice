@@ -1,0 +1,43 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+}
+
+.dialog{
+    background-color: wheat;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    border-radius: 10px;
+    border: 3px rgb(255, 255, 255) solid;
+}
+
+.dialogLink {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.active {
+    color: gold;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.message{
+
+}
+
+.avatar {
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 50px;
+    border: 2px white solid;
+}

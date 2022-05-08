@@ -1,0 +1,35 @@
+.background {
+  grid-area: n;
+  background-color: rgba(0, 204, 255, 0.507);
+  border-radius: 10px;
+  height: 80vh;
+}
+
+.link {
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.active {
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 28px;
+  color: gold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sideBarFriendsWrapper {
+  text-align: center;
+  margin-top: 80px;
+  color: white;
+}
+
+.sideBarFriendsAvatars {
+  display: flex;
+  justify-content: space-around;
+}

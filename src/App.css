@@ -1,0 +1,22 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  "n c";
+  grid-template-rows: 120px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.nav-link:hover {
+  transition: .4s;
+  color: rgb(0, 102, 255);
+}
+
+.app-wrapper-content {
+  grid-area: c;
+  background-color: lightgreen;
+  border-radius: 10px;
+  margin-left: 10px;
+}
