@@ -8,7 +8,7 @@ const MainContent = (props) => {
       <div>
         <ProfileInfo/>
       </div>
-        <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+        <MyPosts posts={props.mainContentPage.posts} newPostText={props.mainContentPage.newPostText} dispatch={props.dispatch}/>
     </div>
   );
 }
