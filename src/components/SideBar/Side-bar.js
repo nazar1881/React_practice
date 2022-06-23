@@ -4,7 +4,7 @@ import SideBarFriends from './SideBarFriends/SideBarFriends';
 
 const SideBar = (props) => {
   
-  let sideBarFriendsItem = props.state.friends.map(friend => <SideBarFriends avatar={friend.avatar} name={friend.name}/>)
+  /*let sideBarFriendsItem = props.state.friends.map(friend => <SideBarFriends avatar={friend.avatar} name={friend.name}/>) {sideBarFriendsItem}*/
 
   return (
     <div className={s.background}>
@@ -20,10 +20,13 @@ const SideBar = (props) => {
       <div className={s.link}>
         <NavLink to='/settings' className={navData => navData.isActive?s.active :s.link}>Settings</NavLink>
       </div>
+      <div className={s.link}>
+        <NavLink to='/users' className={navData => navData.isActive?s.active :s.link}>Users</NavLink>
+      </div>
       <div className={s.sideBarFriendsWrapper}>
         <h2>Friends</h2>
         <div className={s.sideBarFriendsAvatars}>
-          {sideBarFriendsItem}
+          
         </div>
       </div>
     </div>  

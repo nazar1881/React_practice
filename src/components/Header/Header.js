@@ -1,13 +1,18 @@
-import logo from'../../globe-icon.svg'
-import s from './Header.module.css'
+import logo from'../../globe-icon.svg';
+import s from './Header.module.css';
+import {NavLink} from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <div className={s.backGround}>
+    <header className={s.backGround}>
       <div className={s.navBar}>
         <img className={s.navLogo} src={logo}></img>
       </div> 
-    </div>
+      <div className={s.loginBlock}>
+        {props.isAuth ? props.login:
+        <NavLink to={'/login'} className={s.loginLink}>Login</NavLink>}
+      </div>
+    </header>
   );
 }
 
