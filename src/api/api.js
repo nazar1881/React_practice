@@ -1,9 +1,9 @@
 import * as axios from "axios";
-
-const baseUrl = 'https://social-network.samuraijs.com/api/1.0/';
+import { follow, unFollow } from "../redux/users-reducer";
 
 const instance = axios.create({
     withCredentials: true,
+    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
         "API-KEY": "2284dbf7-d44b-43f5-bec8-0955d6a517ff"
     }
@@ -11,17 +11,44 @@ const instance = axios.create({
 
 export const usersAPI = {
     getUsers(currentPage = 1, pageSize = 10) {
-        return instance.get(baseUrl + `users?page=${currentPage}&count=${pageSize}`)
+        return instance.get(`users?page=${currentPage}&count=${pageSize}`)
          .then(response => {
              return response.data;
         });
+    },
+    follow(userId) {
+        return instance.post(`follow/${userId}`)
+    },
+    unFollow(userId) {
+        return instance.delete(`follow/${userId}`)
+    },
+    getProfile(userId) {
+        return instance.get(`profile/` + userId)
     }
 }
 
-export const getUsers2 = (currentPage = 1, pageSize = 10) => {
-    return instance.get(`follow?page=${currentPage}&count=${pageSize}`)
-     .then(response => {
-         return response.data;
-    });
+export const authAPI = {
+    authMe() {
+        return instance.get(`auth/me`)
+    }
 }
 
+/*export const followUnFollowAPI = {
+    unFollow(userId) {  
+        return instance.delete(`follow/${userId}`, {})
+            .then(response => {
+            if (response.data.resultCode == 0) {
+                unFollow(userId);
+            }
+        });
+    },
+    folow(userId) {
+        return instance.post(`follow/${userId}`, {})
+            .then(response => {
+            if (response.data.resultCode == 0) {
+                follow(userId);
+            }
+        });
+                        
+    }
+}*/
