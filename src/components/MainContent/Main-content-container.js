@@ -3,8 +3,8 @@ import MainContent from "./Main-content";
 import { connect } from "react-redux";
 import {getUsers, getStatus, updateStatus} from "../../redux/main-content-reducer";
 import { Navigate, useParams } from 'react-router-dom';
-import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 
 export function withRouter(MainContentContainer){
@@ -20,7 +20,7 @@ class MainContentContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 2;
+            userId = this.props.authorizedUserId;
         };
         this.props.getUsers(userId);
         this.props.getStatus(userId);
@@ -37,11 +37,13 @@ class MainContentContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     profile: state.mainContentPage.profile,
-    status: state.mainContentPage.status
+    status: state.mainContentPage.status,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth
 })
 
 export default compose(
     connect(mapStateToProps, {getUsers, getStatus, updateStatus}),
     withRouter,
-    /*withAuthRedirect*/
+    withAuthRedirect
 )(MainContentContainer);
