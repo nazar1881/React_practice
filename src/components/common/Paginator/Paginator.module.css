@@ -1,4 +1,16 @@
-.selectedPage {
+.pageNumber {
+    padding: 3px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.pageNumber.selectedPage {
     font-weight: bold;
+    border-color: black;
     cursor: pointer;
+}
+
+.divWrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
