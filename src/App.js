@@ -25,7 +25,7 @@ class App extends React.Component {
     }
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <HeaderContainer />
           <SideBar /*state={props.state.sidebar}*//>
